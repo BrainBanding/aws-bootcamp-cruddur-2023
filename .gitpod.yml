@@ -9,11 +9,10 @@ tasks:
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
       tasks:
-  - init: 
-     cd /frontend-react-js
-     npm i
-  - init: cd /aws-bootcamp-cruddur-2023
-     docker-compose up
+  - name: react-js
+    command: |
+      cd frontend-react-js
+      npm i
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
