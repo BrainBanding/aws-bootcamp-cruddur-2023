@@ -8,3 +8,8 @@ aws budgets create-budget \
     --topic-arn="arn:aws:sns:eu-west-2:691570650286:billing-alarm" \
     --protocol=email \
     --notification-endpoint=wizman09@gmail.com
+
+    docker container run --rm -p 3000:3000 -d frontend-react-js
+
+  a0f78072e70b2813fe82b28e741374904d2b78d822b76e170cc397bf52e3c4c2=$(docker run --rm -p 4567:4567 -d backend-flask)
+  3f61c8fdefdf6ec27bc89491dc69c98ab448679b65d80a2bfba0373b4ef629e8=$(docker run --rm -p 4567:4567 -d frontend-flask)
