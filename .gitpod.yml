@@ -9,7 +9,11 @@ tasks:
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
       tasks:
-  - init: npm install && npm run build
+  - init: 
+     cd /frontend-react-js
+     npm i
+  - init: cd /aws-bootcamp-cruddur-2023
+     docker-compose up
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
