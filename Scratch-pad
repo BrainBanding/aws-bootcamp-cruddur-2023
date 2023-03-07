@@ -13,3 +13,11 @@ aws budgets create-budget \
 
   a0f78072e70b2813fe82b28e741374904d2b78d822b76e170cc397bf52e3c4c2=$(docker run --rm -p 4567:4567 -d backend-flask)
   3f61c8fdefdf6ec27bc89491dc69c98ab448679b65d80a2bfba0373b4ef629e8=$(docker run --rm -p 4567:4567 -d frontend-flask)
+
+
+
+  export HONEYCOMB_API_KEY="5PQ92ByMwyYGZhXuZMKX8C"
+  gp env HONEYCOMB_API_KEY="5PQ92ByMwyYGZhXuZMKX8C"
+  
+  export HONEYCOMB_SERVICE_NAME="Cruddur"
+  gp env HONEYCOMB_SERVICE_NAME="Cruddur"
