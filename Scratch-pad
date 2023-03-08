@@ -21,3 +21,7 @@ aws budgets create-budget \
   
   export HONEYCOMB_SERVICE_NAME="Cruddur"
   gp env HONEYCOMB_SERVICE_NAME="Cruddur"
+
+
+  export ROLLBAR_ACCESS_TOKEN="e622042c315345f288bf0f73ab7eb518"
+  gp env ROLLBAR_ACCESS_TOKEN="e622042c315345f288bf0f73ab7eb518"
