@@ -35,3 +35,10 @@ FLASK_ADDRESS="https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HO
 aws xray create-group \
    --group-name "Cruddur" \
    --filter-expression "service(\"backend-flask\")
+
+
+REACT_AWS_PROJECT_REGION=
+REACT_APP_AWS_COGNITO_IDENTITY_POOL_ID=
+REACT_APP_AWS_COGNITO_REGION=
+REACT_APP_AWS_USER_POOLS_ID=
+REACT_APP_CLIENT_ID=
