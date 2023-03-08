@@ -28,3 +28,10 @@ aws budgets create-budget \
 
 export AWS_REGION="eu-west-2"
 gp env AWS_REGION="eu-west-2"
+
+export AWS_XRAY_URL="https://xray.eu-west-2.amazonaws.com"
+gp env AWS_XRAY_URL="https://xray.eu-west-2.amazonaws.com"
+FLASK_ADDRESS="https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+aws xray create-group \
+   --group-name "Cruddur" \
+   --filter-expression "service(\"backend-flask\")
