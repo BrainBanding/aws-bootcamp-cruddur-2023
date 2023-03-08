@@ -25,3 +25,6 @@ aws budgets create-budget \
 
   export ROLLBAR_ACCESS_TOKEN="e622042c315345f288bf0f73ab7eb518"
   gp env ROLLBAR_ACCESS_TOKEN="e622042c315345f288bf0f73ab7eb518"
+
+export AWS_REGION="eu-west-2"
+gp env AWS_REGION="eu-west-2"
