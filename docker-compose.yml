@@ -1,3 +1,4 @@
+
 version: "3.8"
 services:
   backend-flask:
@@ -25,7 +26,7 @@ services:
       REACT_APP_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
       REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
       REACT_APP_AWS_USER_POOLS_ID: "eu-west-2_5fAobMfOV"
-      REACT_APP_CLIENT_ID: "61ruja1uikbm4ulhl0a1p9vi3o"
+      REACT_APP_AWS_CLIENT_ID: "61ruja1uikbm4ulhl0a1p9vi3o"
     build: ./frontend-react-js
     ports:
       - "3000:3000"

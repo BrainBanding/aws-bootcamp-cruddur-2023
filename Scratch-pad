@@ -41,4 +41,6 @@ REACT_APP_AWS_PROJECT_REGION=
 REACT_APP_AWS_COGNITO_IDENTITY_POOL_ID=
 REACT_APP_AWS_COGNITO_REGION=
 REACT_APP_AWS_USER_POOLS_ID=
-REACT_APP_CLIENT_ID=
+REACT_APP_AWS_CLIENT_ID=
+
+aws cognito-idp admin-set-user-password --username Gennarog --password Testing1234! --user-pool-id eu-west-2_5fAobMfOV --permanent
