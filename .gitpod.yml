@@ -19,6 +19,8 @@ vscode:
     
     - ms-azuretools.vscode-docker
 
+    - esbenp.prettier-vscode
+
 ports:
   - name: frontend
     port: 3000
