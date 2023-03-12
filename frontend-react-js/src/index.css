@@ -1,4 +1,4 @@
-* { box-sizing: border-box; }
+/* * { box-sizing: border-box; }
 html,body { 
   height: 100%; 
   width: 100%; 
@@ -16,5 +16,47 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+:root {
+  --primary-color: rgb(14, 3, 28);
+  --secondary-color: #fff;
+  --text-color: #403f3f;
+  --background-color: #0e031c;
+  --background-box: rgb(62, 0, 107);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* ...the rest of your CSS code */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #0e031c;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
