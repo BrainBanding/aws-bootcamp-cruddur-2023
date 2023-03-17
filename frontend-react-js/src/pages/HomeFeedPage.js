@@ -100,40 +100,39 @@ export default function HomeFeedPage() {
 
   const loadData = async () => {
     try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
-      );
-      const resJson = await res.json();
-      if (res.ok) {
+      const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`;
+      const res = await fetch(backend_url, {
+        method: "GET",
+      });
+      let resJson = await res.json();
+      if (res.status === 200) {
         setActivities(resJson);
       } else {
-        console.error(res);
+        console.log(res);
       }
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
 
   const checkAuth = async () => {
-    try {
-      const user = await Auth.currentAuthenticatedUser({
-        bypassCache: false,
-      });
+    console.log("checkAuth");
+    // [TODO] Authenication
+    if (Cookies.get("user.logged_in")) {
       setUser({
-        display_name: user.attributes.name,
-        handle: user.attributes.preferred_username,
+        display_name: Cookies.get("user.name"),
+        handle: Cookies.get("user.username"),
       });
-    } catch (err) {
-      console.error(err);
     }
   };
 
   React.useEffect(() => {
-    if (!dataFetchedRef.current) {
-      loadData();
-      checkAuth();
-      dataFetchedRef.current = true;
-    }
+    //prevents double call
+    if (dataFetchedRef.current) return;
+    dataFetchedRef.current = true;
+
+    loadData();
+    checkAuth();
   }, []);
 
   return (
@@ -163,3 +162,72 @@ export default function HomeFeedPage() {
     </article>
   );
 }
+
+//   const loadData = async () => {
+//     try {
+//       const res = await fetch(
+//         `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
+//       );
+//        headers: {
+//          Authorization: `Bearer ${localStorage.getItem("access_token")}`;
+//        }
+//       const resJson = await res.json();
+//       if (res.ok) {
+//         setActivities(resJson);
+//       } else {
+//         console.error(res);
+//       }
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   const checkAuth = async () => {
+//     try {
+//       const user = await Auth.currentAuthenticatedUser({
+//         bypassCache: false,
+//       });
+//       setUser({
+//         display_name: user.attributes.name,
+//         handle: user.attributes.preferred_username,
+//       });
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   React.useEffect(() => {
+//     if (!dataFetchedRef.current) {
+//       loadData();
+//       checkAuth();
+//       dataFetchedRef.current = true;
+//     }
+//   }, []);
+
+//   return (
+//     <article>
+//       <DesktopNavigation user={user} active={"home"} setPopped={setPopped} />
+//       <div className="content">
+//         <ActivityForm
+//           popped={popped}
+//           setPopped={setPopped}
+//           setActivities={setActivities}
+//         />
+//         <ReplyForm
+//           activity={replyActivity}
+//           popped={poppedReply}
+//           setPopped={setPoppedReply}
+//           setActivities={setActivities}
+//           activities={activities}
+//         />
+//         <ActivityFeed
+//           title="Home"
+//           setReplyActivity={setReplyActivity}
+//           setPopped={setPoppedReply}
+//           activities={activities}
+//         />
+//       </div>
+//       <DesktopSidebar user={user} />
+//     </article>
+//   );
+// }
