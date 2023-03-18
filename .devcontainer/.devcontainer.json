@@ -1,6 +1,8 @@
 {
   "name": "Crudder config",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "build": {
+    "context": "..",
+  "dockerfile": "/workspaces/${localWorkspaceFolderBasename}"},
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/azure-cli:1": {}
