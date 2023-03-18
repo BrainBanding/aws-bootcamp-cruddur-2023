@@ -1,0 +1,18 @@
+{
+  "name": "Crudder config",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "dracula-theme.theme-dracula",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
