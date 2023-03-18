@@ -1,4 +1,4 @@
-article.recover-article .recover-info .logo {
+/* article.recover-article .recover-info .logo {
   width: 140px;
   height: 140px;
   fill: #2021246c;
@@ -82,4 +82,96 @@ article.recover-article button[type='submit'] {
   font-size: 16px;
   background: rgba(149,0,255,1);
   color: #fff;
+} */
+
+article.recover-article .recover-info .logo {
+  width: 140px;
+  height: 140px;
+  fill: #2021246c;
+}
+
+article.recover-article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #8819f5, #5c5cd6);
+}
+
+article.recover-article .recover-wrapper {
+  background: #f5f5f5;
+  width: 560px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+article.recover-article form {
+  padding: 48px;
+  flex-grow: 1;
+}
+
+article.recover-article label {
+  padding: 4px 0px;
+  display: block;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+}
+
+article.recover-article input[type="text"],
+article.recover-article input[type="password"] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  display: block;
+  outline: none;
+  resize: none;
+  width: 100%;
+  padding: 16px;
+  border: solid 1px #d9d9d9;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.field.password {
+  margin-top: 16px;
+}
+
+article.recover-article input[type="text"]:focus,
+article.recover-article input[type="password"]:focus {
+  border: solid 1px #8819f5;
+}
+
+article.recover-article .submit {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article.recover-article h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+article.recover-article button[type="submit"] {
+  font-weight: 800;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 28px;
+  font-size: 16px;
+  background: #8819f5;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+article.recover-article button[type="submit"]:hover {
+  background: #5c5cd6;
 }
