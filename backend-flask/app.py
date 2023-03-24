@@ -2,6 +2,9 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
+import sys
+
+from flask_awscognito import AWSCognitoAuthentication
 
 from services.notifications_activities import *
 from services.home_activities import *
@@ -61,6 +64,17 @@ LOGGER.addHandler(cw_handler)
 
 # Initialize automatic instrumentation with Flask
 app = Flask(__name__)
+
+app.config['AWS_COGNITO_USER_POOL_ID'] = os.getenv("AWS_COGNITO_USER_POOL_ID")
+app.config['AWS_COGNITO_USER_POOL_CLIENT_ID'] = os.getenv("AWS_COGNITO_USER_POOL_ID")
+
+
+
+aws_auth = AWSCognitoAuthentication(app)
+
+
+
+
 # X-RAY APP
 XRayMiddleware(app, xray_recorder)
 
@@ -74,8 +88,8 @@ origins = [frontend, backend]
 cors = CORS(
     app,
     resources={r"/api/*": {"origins": origins}},
-    expose_headers="location,link",
-    allow_headers="content-type,if-modified-since",
+    headers=['Content-Type', 'Authorization'],
+    expose_headers='Authorization',
     methods="OPTIONS,GET,HEAD,POST"
 )
 
@@ -162,6 +176,7 @@ def data_home():
     print(
         request.headers.get('Authorization')
     )
+    # request.headers.get('Authorization')
     data = HomeActivities.run()
     return data, 200
 
